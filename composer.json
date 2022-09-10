@@ -1,0 +1,9 @@
+{
+  "name": "erkenes/flow-fusion-base",
+  "description": "Flow Fusion Package with prototypes for rendering",
+  "require": {
+    "neos/flow": "*",
+    "neos/fusion": "*",
+    "neos/fusion-afx": "*"
+  }
+}

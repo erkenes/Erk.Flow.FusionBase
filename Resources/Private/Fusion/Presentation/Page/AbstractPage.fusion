@@ -1,0 +1,25 @@
+prototype(Erk.Flow.FusionBase:Presentation.Page.AbstractPage) < prototype(Neos.Fusion:Component) {
+    @process.addDocType = ${'<!DOCTYPE html>' + value}
+
+    head = Neos.Fusion:Join {
+        titleTag = Neos.Fusion:Tag {
+            tagName = 'title'
+        }
+        stylesheets = Neos.Fusion:Join
+        javascripts = Neos.Fusion:Join
+    }
+
+    body = Neos.Fusion:Join {
+        javascripts = Neos.Fusion:Join
+        @process.appendJavaScripts = ${value + this.javascripts}
+    }
+
+    // Renderer
+    renderer= Erk.Flow.FusionBase:Presentation.Page.AbstractPage.Body {
+        head = ${props.head}
+        body = ${props.body}
+    }
+
+    // enable Neos.Fusion:Debug helper
+    @process.debugDump = Neos.Fusion:DebugDump
+}

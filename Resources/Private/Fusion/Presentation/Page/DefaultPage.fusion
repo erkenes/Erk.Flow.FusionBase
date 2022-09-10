@@ -1,0 +1,44 @@
+prototype(Erk.Flow.FusionBase:Presentation.Page.DefaultPage) < prototype(Erk.Flow.FusionBase:Presentation.Page.AbstractPage) {
+    // API
+    sitePackageKey = 'Erk.Flow.FusionBase'
+
+    head {
+        metaHeadTags = Neos.Fusion:Join {
+            viewport = Neos.Fusion:Tag {
+                tagName = 'meta'
+                attributes {
+                    name = 'viewport'
+                    content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+                }
+            }
+        }
+        stylesheets {
+            mainStyle = Neos.Fusion:Tag {
+                tagName = 'link'
+                attributes {
+                    rel = 'stylesheet'
+                    type = 'text/css'
+                    href = Neos.Fusion:ResourceUri {
+                        resource = ${'resource://' + sitePackageKey + '/Styles/Main.css'}
+                    }
+                }
+            }
+        }
+    }
+    body {
+        javascripts {
+            mainJavaScript = Neos.Fusion:Tag {
+                tagName = 'script'
+                attributes {
+                    src = Neos.Fusion:ResourceUri {
+                        resource = ${'resource://' + props.sitePackageKey + '/JavaScript/Main.js'}
+                    }
+                }
+            }
+        }
+    }
+
+    @context {
+        sitePackageKey = ${this.sitePackageKey}
+    }
+}

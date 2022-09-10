@@ -1,0 +1,14 @@
+prototype(Erk.Flow.FusionBase:Presentation.Page.AbstractPage.Body) < prototype(Neos.Fusion:Component) {
+    // Renderer
+    renderer = afx`
+        <html>
+        <head>
+            <meta charset="UTF-8" />
+            {props.head}
+        </head>
+        <body>
+            {props.body}
+        </body>
+        </html>
+    `
+}
