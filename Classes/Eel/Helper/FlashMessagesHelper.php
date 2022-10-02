@@ -1,4 +1,5 @@
 <?php
+
 namespace Erk\Flow\FusionBase\Eel\Helper;
 
 use Neos\Eel\ProtectedContextAwareInterface;
