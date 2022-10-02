@@ -1,0 +1,12 @@
+prototype(Erk.Flow.FusionBase:Content.FlashMessages) < prototype(Neos.Fusion:Component) {
+    // Renderer
+    renderer = Erk.Flow.FusionBase:Component.Molecule.FlashMessages {
+        flashMessages = Neos.Fusion:Loop {
+            items = ${Erk.Flow.FusionBase.FlashMessages.getFlashMessages(request)}
+            itemName = 'flashMessage'
+            itemRenderer = Erk.Flow.FusionBase:Component.Atom.FlashMessage {
+                flashMessage = ${flashMessage}
+            }
+        }
+    }
+}

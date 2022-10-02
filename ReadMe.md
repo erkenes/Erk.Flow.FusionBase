@@ -77,3 +77,11 @@ prototype(Foo.Bar:Presentation.Organism.SomeCustomController.IndexAction) < prot
     `
 }
 ```
+
+### Flash-Messages
+
+To render Flash-Messages as bootstrap alerts in the frontend:
+
+```neosfusion
+<Erk.Flow.FusionBase:Content.FlashMessages />
+```

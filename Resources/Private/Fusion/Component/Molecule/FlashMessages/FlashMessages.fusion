@@ -1,0 +1,11 @@
+prototype(Erk.Flow.FusionBase:Component.Molecule.FlashMessages) < prototype(Neos.Fusion:Component) {
+    // API
+    flashMessages = ''
+
+    // Renderer
+    renderer = afx`
+        <div id="flash-messages-container" @if.isSet={props.flashMessages}>
+            {props.flashMessages}
+        </div>
+    `
+}

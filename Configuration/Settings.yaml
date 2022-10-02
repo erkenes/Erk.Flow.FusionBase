@@ -3,3 +3,6 @@ Neos:
     fusion:
       autoInclude:
         'Erk.Flow.FusionBase': true
+  Fusion:
+    defaultContext:
+      'Erk.Flow.FusionBase.FlashMessages': Erk\Flow\FusionBase\Eel\Helper\FlashMessagesHelper

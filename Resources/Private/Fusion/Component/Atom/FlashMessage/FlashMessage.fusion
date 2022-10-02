@@ -1,0 +1,54 @@
+prototype(Erk.Flow.FusionBase:Component.Atom.FlashMessage) < prototype(Neos.Fusion:Component) {
+    // API
+    flashMessage = ${[]}
+
+    // Implementation
+    severityConfiguration = Neos.Fusion:Case {
+        success {
+            condition = ${flashMessage.severity == 'OK'}
+            renderer = Neos.Fusion:DataStructure {
+                wrapperType = 'success'
+                iconClass = 'fa-solid fa-circle-check'
+            }
+        }
+        info {
+            condition = ${flashMessage.severity == 'Notice'}
+            renderer = Neos.Fusion:DataStructure {
+                wrapperType = 'info'
+                iconClass = 'fa-solid fa-circle-info'
+            }
+        }
+        warning {
+            condition = ${flashMessage.severity == 'Warning'}
+            renderer = Neos.Fusion:DataStructure {
+                wrapperType = 'warning'
+                iconClass = 'fa-solid fa-triangle-exclamation'
+            }
+        }
+        error {
+            condition = ${flashMessage.severity == 'Error'}
+            renderer = Neos.Fusion:DataStructure {
+                wrapperType = 'danger'
+                iconClass = 'fa-solid fa-circle-exclamation'
+            }
+        }
+    }
+
+    wrapperClasses = ${'alert alert-' + this.severityConfiguration.wrapperType}
+    iconClasses = ${this.severityConfiguration.iconClass}
+    flashMessageId = ${'flash-message-' + this.flashMessage.code}
+    message = ${this.flashMessage.message}
+    title = ${this.flashMessage.title}
+
+    // Renderer
+    renderer = afx`
+        <div class={props.wrapperClasses} id={props.flashMessageId} role="alert">
+            <h4 class="alert-heading" @if.isSet={props.title}>{props.title}</h4>
+            <p class="mb-0"><i class={props.iconClasses}></i> {props.message}</p>
+        </div>
+    `
+
+    @context {
+        flashMessage = ${this.flashMessage}
+    }
+}
