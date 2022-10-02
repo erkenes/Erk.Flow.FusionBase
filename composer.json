@@ -1,9 +1,29 @@
 {
-  "name": "erkenes/flow-fusion-base",
-  "description": "Flow Fusion Package with prototypes for rendering",
-  "require": {
-    "neos/flow": "*",
-    "neos/fusion": "*",
-    "neos/fusion-afx": "*"
-  }
+    "name": "erkenes/flow-fusion-base",
+    "description": "Flow Fusion Package with prototypes for rendering",
+    "type": "neos-package",
+    "keywords": ["fusion", "flow", "neos-flow"],
+    "homepage": "https://github.com/erkenes/Erk.Flow.BaseDevelopment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Enes Erk",
+            "homepage": "https://github.com/erkenes",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/erkenes/Erk.Flow.BaseDevelopment/issues",
+        "source": "https://github.com/erkenes/Erk.Flow.BaseDevelopment"
+    },
+    "require": {
+        "neos/flow": "*",
+        "neos/fusion": "*",
+        "neos/fusion-afx": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Erk\\Flow\\FusionBase\\": "Classes"
+        }
+    }
 }
