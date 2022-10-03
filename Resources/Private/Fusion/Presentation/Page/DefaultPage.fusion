@@ -19,7 +19,7 @@ prototype(Erk.Flow.FusionBase:Presentation.Page.DefaultPage) < prototype(Erk.Flo
                     rel = 'stylesheet'
                     type = 'text/css'
                     href = Neos.Fusion:ResourceUri {
-                        resource = ${'resource://' + sitePackageKey + '/Styles/Main.css'}
+                        path = ${'resource://' + sitePackageKey + '/Public/Styles/Main.css'}
                     }
                 }
             }
@@ -31,7 +31,7 @@ prototype(Erk.Flow.FusionBase:Presentation.Page.DefaultPage) < prototype(Erk.Flo
                 tagName = 'script'
                 attributes {
                     src = Neos.Fusion:ResourceUri {
-                        resource = ${'resource://' + props.sitePackageKey + '/JavaScript/Main.js'}
+                        path = ${'resource://' + sitePackageKey + '/Public/JavaScript/Main.js'}
                     }
                 }
             }
